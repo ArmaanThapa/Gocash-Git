@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="armaandb">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<!-- User Tables -->
+		<class>com.gocash.entity.User</class>
+		<class>com.gocash.entity.UserDetail</class>
+		<class>com.gocash.entity.UserSession</class>
+		<class>com.gocash.entity.LoginLog</class>
+		<class>com.gocash.entity.SessionLog</class>
+		
+		
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="hibernate.ejb.cfgfile" value="hibernate.cfg.xml" />
+		</properties>
+	</persistence-unit>
+</persistence>

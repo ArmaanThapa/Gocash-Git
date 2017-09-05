@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.default_batch_fetch_size">16</property>
+		<property name="hibernate.max_fetch_depth">5</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.cache.use_query_cache">false</property>
+		<property name="hibernate.cache.use_second_level_cache">false</property>
+		<property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+		
+		<property name="hibernate.c3p0.timeout">300</property> <!-- 600 2/3min -->
+		
+		<!-- ADDITION -->
+		<!-- Memory allocation to Tomcat 4GB -->
+		<property name="hibernate.c3p0.preferredTestQuery">SELECT 1;</property>
+		<property name="hibernate.c3p0.validate">true</property>
+		<property name="hibernate.c3p0.min_size">10</property>
+		<property name="hibernate.c3p0.max_size">100</property> <!-- Single Connection Memory Footprint -->
+		<property name="hibernate.c3p0.max_statements">50</property>
+		<property name="hibernate.c3p0.testConnectionOnCheckout">true</property>
+		<property name="hibernate.c3p0.idle_test_period">300</property> 
+		
+		<!-- CONNECTION -->
+		<property name="connection.autoReconnect">true</property>
+		<property name="connection.autoReconnectForPools">true</property>
+		<property name="connection.is-connection-validation-required">true</property> 
+		
+	</session-factory>
+	
+	
+	<!-- OLD Session Factory 
+	<session-factory>
+		<property name="hibernate.default_batch_fetch_size">16</property>
+		<property name="hibernate.max_fetch_depth">5</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.cache.use_query_cache">false</property>
+		<property name="hibernate.cache.use_second_level_cache">false</property>
+		<property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+		<property name="hibernate.c3p0.timeout">300</property>
+	</session-factory> -->
+</hibernate-configuration>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd	
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- API CONTROLLER -->
+
+	<bean class="com.gocash.controller.api.v1.RegisterController">
+	<constructor-arg ref="registerValidation" />
+	<constructor-arg ref="userApi" />
+	
+	</bean>
+	
+	
+	<bean class="com.gocash.controller.api.v1.LoginController">
+	<constructor-arg ref="loginValidation"/>
+	<constructor-arg ref="userApi" />
+	<constructor-arg ref="sessionApi" />
+	<constructor-arg ref="authenticationManager"/>
+	<constructor-arg ref="sls" />
+	<constructor-arg ref="userSessionRepository"/>
+	
+	</bean>
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	
+</beans>
